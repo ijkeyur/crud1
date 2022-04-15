@@ -1,0 +1,50 @@
+<div class="card1">
+    <h4 class="card-header">Register</h4>
+    <div class="card-body">
+        <form [formGroup]="crudFrom" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput formControlName="firstName"  placeholder="First Name" />
+                  </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input  matInput  formControlName="lastName" placeholder="Last Name" />
+                  </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput  formControlName="email" placeholder="Email" />
+                  </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput type="password" formControlName="password" placeholder="Password" />
+                  </mat-form-field>
+            </div>
+            <div class="form-group">
+                <div class="text-center">
+                    <button mat-raised-button  color="primary" class="btn btn-primary mr-1">Register</button>
+                    <button mat-raised-button  color="primary"  class="btn btn-secondary" type="reset">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngFor="let crud of crud,let i = index">
+    <mat-card  style="background-color: rgb(209, 252, 252);">
+        <div class="matData"> 
+            first Name : {{crud.firstName}}
+        </div>
+        <div class="matData"> 
+            last Name : {{crud.lastName}}
+        </div>
+        <div class="matData"> 
+            email : {{crud.email}}
+        </div>
+        <div class="delete">
+            <mat-icon (click)="update()">update</mat-icon>
+            <mat-icon (click)="delete(i)">delete</mat-icon>
+        </div>
+      </mat-card>
+</div>

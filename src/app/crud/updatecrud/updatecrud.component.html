@@ -1,0 +1,32 @@
+<div class="card1">
+    <h4 class="card-header">Register</h4>
+    <div class="card-body">
+        <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput formControlName="firstName"  placeholder="First Name" />
+                  </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input  matInput  formControlName="lastName" placeholder="Last Name" />
+                  </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput  formControlName="email" placeholder="Email" />
+                  </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput type="password" formControlName="password" placeholder="Password" />
+                  </mat-form-field>
+            </div>
+            <div class="form-group">
+                <div class="text-center">
+                    <button mat-raised-button  color="primary" class="btn btn-primary mr-1">Register</button>
+                    <button mat-raised-button  color="primary"  class="btn btn-secondary" type="reset">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
